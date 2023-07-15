@@ -151,3 +151,35 @@ button:hover {
   font-weight: 100;
   line-height: 150%; /* 2.25rem */
 }
+
+.container-footer{
+    height: 5rem;
+    background-color: #0a3871;
+    font-family: Helvetica, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.footer-text{
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 200;
+}
+
+.fa-github{
+    text-align: center;
+    color: #fff;
+}
+
+.fa-github:link{
+    color: #fff;
+    text-decoration: none;
+}
+
+.fa-github:visited{
+    color: #fff;
+    background-color: #fff;
+}
