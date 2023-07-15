@@ -1,15 +1,44 @@
 
 const texto = document.querySelector('.texto-a-encriptar');
-
+const textoEncriptado = document.querySelector('.texto-encriptado');
 const encriptarBtn = document.querySelector('#button-encriptar');
 const desencriptarBtn = document.querySelector('#button-desencriptar');
+const noMessage = document.querySelectorAll('.no-message');
+const copiarBtn = document.querySelector('.btn-copiar');
+
+
+
+console.log(textoEncriptado);
 
 encriptarBtn.onclick = () => {
-    console.log(encriptar(texto.value))
+    textoEncriptado.textContent = encriptar(texto.value);
+    if (textoEncriptado.textContent != ''){
+        noMessage.forEach((element) => {
+            element.classList.add('hide-action');
+        });
+        copiarBtn.classList.remove('hide-action');
+        copiarBtn.classList.add('unhide-action');
+        textoEncriptado.classList.remove('hide-action');
+        textoEncriptado.classList.remove('unhide-action');
+        navigator.clipboard.writeText(textoEncriptado.textContent);
+    }
+    
+
 }
 
 desencriptarBtn.onclick = () => {
-    console.log(desencriptar(texto.value))
+    textoEncriptado.textContent = desencriptar(texto.value);
+    if (textoEncriptado.textContent != ''){
+        noMessage.forEach((element) => {
+            element.classList.add('hide-action');
+        });
+        copiarBtn.classList.remove('hide-action');
+        copiarBtn.classList.add('unhide-action');
+        textoEncriptado.classList.remove('hide-action');
+        textoEncriptado.classList.remove('unhide-action');
+        navigator.clipboard.writeText(textoEncriptado.textContent);
+    }
+
 }
 
 // La letra "e" es convertida para "enter"
@@ -65,3 +94,6 @@ function desencriptar (text){
     return textoDesencriptado;
 }
 
+function hideEncriptarContainer (elements){
+    elements.classList.add('hide-action');
+}
