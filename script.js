@@ -6,10 +6,6 @@ const desencriptarBtn = document.querySelector('#button-desencriptar');
 const noMessage = document.querySelectorAll('.no-message');
 const copiarBtn = document.querySelector('.btn-copiar');
 
-
-
-console.log(textoEncriptado);
-
 encriptarBtn.onclick = () => {
     textoEncriptado.textContent = encriptar(texto.value);
     if (textoEncriptado.textContent != ''){
